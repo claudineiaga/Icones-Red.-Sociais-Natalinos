@@ -1,0 +1,60 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    min-height: 100vh;
+    background: rgb(130, 15, 15);
+    background: radial-gradient(circle, rgb(132, 17, 17) 34%, rgba(51,93,10,1) 81%);
+}
+ul{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -90px;
+}
+ul a{
+    color: white;
+    text-decoration: none;
+}
+ul li{
+    font-size: 8vmin;
+    width: 2em;
+    height: 2em;
+    display: grid;
+    place-items: center;
+    border: 0.125em solid;
+    border-radius: 50%;
+    position: relative;
+    filter: drop-shadow(0 0 0.05em black)
+}
+ul li::before, ul li::after{
+    content: "";
+    position: relative;
+    pointer-events: none;
+}
+ul li::before{
+    width: .75em;
+    height: .6em;
+    bottom: 100%;
+    background-image: linear-gradient(to top, white 50%, transparent 0),
+    radial-gradient(circle at center, transparent 30%, 
+    white 0 50%, transparent 0);
+}
+ul li::after{
+    width: 0.125em;
+    height: 100vh;
+    background: white;
+    bottom: calc(110% + .5em);
+}
+ul a:nth-of-type(even){
+    margin-top: 10rem;
+}
+ul a{
+    transition: transform .125s ease;
+}
+ul a:hover{
+    transform: scale(1.05);
+}
